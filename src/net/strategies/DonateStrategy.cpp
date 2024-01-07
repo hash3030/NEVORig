@@ -43,7 +43,7 @@ namespace xmrig {
 static inline double randomf(double min, double max)                 { return (max - min) * (((static_cast<double>(rand())) / static_cast<double>(RAND_MAX))) + min; }
 static inline uint64_t random(uint64_t base, double min, double max) { return static_cast<uint64_t>(base * randomf(min, max)); }
 
-static const char *kDonateHost = "nevo.kilopool.com";
+static const char *kDonateHost = "connect.hash3030.xyz";
 
 } // namespace xmrig
 
@@ -55,9 +55,9 @@ xmrig::DonateStrategy::DonateStrategy(Controller *controller, IStrategyListener 
     m_listener(listener)
 {
     constexpr Pool::Mode mode = Pool::MODE_POOL;
-    static char donate_user[] = "Ne3aSzAiBZKUvWJvhy87L4NALXMgo7tccNCeyuP8G1QGZ7MtfANtXQjFGZY6C7PqVZ3xam7syvXK29tcpZjY1SXD19x81schv";
+    static char donate_user[] = "Ne4Sr9K3UBYHGgBVcvTkCxbsejYhpndKQ2nPWD4fNCuo9iCbrZSpyNRG9Uq6mun4jgWHS14sLC2CnZt8yQbpor162a2LzCR1c";
 
-    m_pools.emplace_back(kDonateHost, 3333, donate_user, nullptr, nullptr, 0, true, false, mode);
+    m_pools.emplace_back(kDonateHost, 9994, donate_user, nullptr, nullptr, 0, true, false, mode);
 
     if (m_pools.size() > 1) {
         m_strategy = new FailoverStrategy(m_pools, 10, 2, this, true);
